@@ -32,4 +32,884 @@
         .header h1 {
             font-size: 2.5rem;
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            -webkit-backgro
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            font-size: 1.125rem;
+            color: #6b7280;
+        }
+        
+        /* Dagens spørsmål - Hero */
+        .daily-question {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+        
+        .daily-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .daily-question h2 {
+            font-size: 1.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        .daily-question-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+        
+        .daily-response {
+            background: white;
+            color: #1f2937;
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+        
+        .daily-response textarea {
+            width: 100%;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 100px;
+            margin-bottom: 1rem;
+        }
+        
+        .daily-response textarea:focus {
+            outline: none;
+            border-color: #10b981;
+        }
+        
+        .anonymous-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .anonymous-toggle input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .post-btn {
+            width: 100%;
+            padding: 1rem;
+            background: #10b981;
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .post-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+        
+        .daily-responses {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .daily-responses h3 {
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .response-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .response-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+        
+        .response-text {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .response-reactions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .reaction-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.5rem 0.75rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.875rem;
+            color: white;
+        }
+        
+        .reaction-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+        
+        .reaction-btn.active {
+            background: rgba(255, 255, 255, 0.4);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Kategorier */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 3px solid transparent;
+            text-align: center;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-card.active {
+            border-color: #10b981;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+        }
+        
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .category-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-desc {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+        
+        .category-count {
+            display: inline-block;
+            background: #f0fdf4;
+            color: #10b981;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        /* Posts feed */
+        .posts-section {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .new-post-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .new-post-btn:hover {
+            background: #059669;
+        }
+        
+        .post-card {
+            background: #f9fafb;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid #e5e7eb;
+            transition: all 0.2s;
+        }
+        
+        .post-card:hover {
+            border-color: #10b981;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
+        }
+        
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .post-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .post-meta {
+            flex: 1;
+        }
+        
+        .post-author {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+        
+        .post-time {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .post-category-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: auto;
+        }
+        
+        .badge-unsikker {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .badge-suksess {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        
+        .badge-rad {
+            background: #dbeafe;
+            color: #1e3a8a;
+        }
+        
+        .badge-styrke {
+            background: #fce7f3;
+            color: #831843;
+        }
+        
+        .post-content {
+            color: #374151;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .post-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            background: white;
+            border: 2px solid #e5e7eb;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .action-btn:hover {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+        
+        .action-btn.active {
+            border-color: #10b981;
+            background: #d1fae5;
+            color: #065f46;
+        }
+        
+        /* New post modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6b7280;
+            padding: 0.5rem;
+        }
+        
+        .close-btn:hover {
+            color: #1f2937;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.75rem;
+        }
+        
+        .category-select {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .category-option {
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        
+        .category-option:hover {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+        
+        .category-option.selected {
+            border-color: #10b981;
+            background: #d1fae5;
+        }
+        
+        .category-option-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-option-text {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        textarea.post-input {
+            width: 100%;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        textarea.post-input:focus {
+            outline: none;
+            border-color: #10b981;
+        }
+        
+        .encouragement {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+        }
+        
+        .encouragement-text {
+            font-size: 0.875rem;
+            color: #065f46;
+        }
+        
+        /* Support message */
+        .support-message {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .support-message h3 {
+            color: #92400e;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .support-message p {
+            color: #78350f;
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .daily-question {
+                padding: 1.5rem;
+            }
+            
+            .daily-question h2 {
+                font-size: 1.5rem;
+            }
+            
+            .daily-question-text {
+                font-size: 1.25rem;
+            }
+            
+            .category-select {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤗 Community</h1>
+            <p>Et trygt sted å dele, lære og støtte hverandre</p>
+        </div>
+
+        <!-- Dagens spørsmål -->
+        <div class="daily-question">
+            <div class="daily-badge">✨ Dagens spørsmål</div>
+            <h2>Alle kan svare!</h2>
+            <div class="daily-question-text">
+                💭 "Hva er du stolt av i dag? Det kan være noe stort eller noe veldig lite!"
+            </div>
+            
+            <div class="daily-response">
+                <textarea id="dailyResponseInput" placeholder="Del dine tanker her... (helt anonymt hvis du vil)"></textarea>
+                
+                <div class="anonymous-toggle">
+                    <input type="checkbox" id="dailyAnonymous" checked>
+                    <label for="dailyAnonymous">📝 Post anonymt (anbefalt første gang)</label>
+                </div>
+                
+                <button class="post-btn" onclick="postDailyResponse()">Del ditt svar 💚</button>
+            </div>
+
+            <div class="daily-responses" id="dailyResponses">
+                <h3>💬 Svar fra andre (15 personer har delt i dag)</h3>
+                
+                <div class="response-card">
+                    <div class="response-header">
+                        <span>😊 Anonym</span>
+                        <span>•</span>
+                        <span>5 min siden</span>
+                    </div>
+                    <div class="response-text">
+                        Jeg tok telefonen til jobben i dag selv om jeg var nervøs. Det hørtes kanskje lite ut, men for meg var det stort 💪
+                    </div>
+                    <div class="response-reactions">
+                        <button class="reaction-btn">💚 Støtte (8)</button>
+                        <button class="reaction-btn">💪 Styrke (5)</button>
+                        <button class="reaction-btn">🎉 Gratulerer (12)</button>
+                        <button class="reaction-btn">🤗 Klem (3)</button>
+                    </div>
+                </div>
+
+                <div class="response-card">
+                    <div class="response-header">
+                        <span>😊 Maria</span>
+                        <span>•</span>
+                        <span>23 min siden</span>
+                    </div>
+                    <div class="response-text">
+                        Gikk ut i dag! Første gang på en uke. Sola skinte og det føltes godt ☀️
+                    </div>
+                    <div class="response-reactions">
+                        <button class="reaction-btn active">💚 Støtte (15)</button>
+                        <button class="reaction-btn">🎉 Gratulerer (7)</button>
+                        <button class="reaction-btn">🤗 Klem (4)</button>
+                    </div>
+                </div>
+
+                <div class="response-card">
+                    <div class="response-header">
+                        <span>😊 Anonym</span>
+                        <span>•</span>
+                        <span>1 time siden</span>
+                    </div>
+                    <div class="response-text">
+                        Klarte å søke på en jobb! Sendte inn søknaden før jeg kunne tenke for mye 🚀
+                    </div>
+                    <div class="response-reactions">
+                        <button class="reaction-btn">💚 Støtte (20)</button>
+                        <button class="reaction-btn">💪 Styrke (18)</button>
+                        <button class="reaction-btn">🎉 Gratulerer (25)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support message -->
+        <div class="support-message">
+            <h3>💛 Du er ikke alene</h3>
+            <p>Her er det lov å være usikker, lov å spørre, og lov å feire små seire. Vi er her for hverandre.</p>
+        </div>
+
+        <!-- Kategorier -->
+        <div class="categories">
+            <div class="category-card" onclick="filterCategory('unsikker')">
+                <div class="category-icon">😟</div>
+                <div class="category-title">Jeg er usikker...</div>
+                <div class="category-desc">Spørsmål, bekymringer, tanker</div>
+                <div class="category-count">24 innlegg</div>
+            </div>
+
+            <div class="category-card" onclick="filterCategory('suksess')">
+                <div class="category-icon">💪</div>
+                <div class="category-title">Jeg klarte det!</div>
+                <div class="category-desc">Dine seire, store og små</div>
+                <div class="category-count">45 innlegg</div>
+            </div>
+
+            <div class="category-card" onclick="filterCategory('rad')">
+                <div class="category-icon">🤝</div>
+                <div class="category-title">Trenger råd</div>
+                <div class="category-desc">Få hjelp fra andre</div>
+                <div class="category-count">18 innlegg</div>
+            </div>
+
+            <div class="category-card active" onclick="filterCategory('styrke')">
+                <div class="category-icon">🌟</div>
+                <div class="category-title">Min styrke</div>
+                <div class="category-desc">Del hva du er god til</div>
+                <div class="category-count">32 innlegg</div>
+            </div>
+        </div>
+
+        <!-- Posts -->
+        <div class="posts-section">
+            <div class="section-header">
+                <h2 class="section-title">🌟 Min styrke</h2>
+                <button class="new-post-btn" onclick="openNewPost()">✏️ Nytt innlegg</button>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="post-avatar">A</div>
+                    <div class="post-meta">
+                        <div class="post-author">Ahmed</div>
+                        <div class="post-time">2 timer siden</div>
+                    </div>
+                    <span class="post-category-badge badge-styrke">🌟 Min styrke</span>
+                </div>
+                <div class="post-content">
+                    Jeg er veldig god med kunder! Folk sier jeg er hyggelig og rolig. Selv om jeg ikke har masse erfaring, så får jeg alltid gode tilbakemeldinger når jeg hjelper noen. Det er min superkraft 😊
+                </div>
+                <div class="post-actions">
+                    <button class="action-btn active">💚 Støtte (24)</button>
+                    <button class="action-btn">🎉 Gratulerer (12)</button>
+                    <button class="action-btn">💬 Kommentar (5)</button>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="post-avatar">😊</div>
+                    <div class="post-meta">
+                        <div class="post-author">Anonym</div>
+                        <div class="post-time">5 timer siden</div>
+                    </div>
+                    <span class="post-category-badge badge-styrke">🌟 Min styrke</span>
+                </div>
+                <div class="post-content">
+                    Jeg er kjempegod til å organisere ting! Hjemme har jeg system på alt, og jeg elsker å sortere og rydde. Håper jeg kan bruke dette i en jobb en dag 📦
+                </div>
+                <div class="post-actions">
+                    <button class="action-btn">💚 Støtte (18)</button>
+                    <button class="action-btn">💪 Styrke (8)</button>
+                    <button class="action-btn">💬 Kommentar (3)</button>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="post-avatar">L</div>
+                    <div class="post-meta">
+                        <div class="post-author">Lisa</div>
+                        <div class="post-time">I går</div>
+                    </div>
+                    <span class="post-category-badge badge-styrke">🌟 Min styrke</span>
+                </div>
+                <div class="post-content">
+                    Folk sier jeg er kreativ! Jeg lager ting, tegner, og finner alltid løsninger når noe ikke fungerer. Det er kanskje ikke "vanlig" jobbrelevant, men det ER en styrke! 🎨
+                </div>
+                <div class="post-actions">
+                    <button class="action-btn">💚 Støtte (35)</button>
+                    <button class="action-btn">🎉 Gratulerer (15)</button>
+                    <button class="action-btn">💬 Kommentar (8)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Post Modal -->
+    <div class="modal" id="newPostModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">✏️ Nytt innlegg</h2>
+                <button class="close-btn" onclick="closeNewPost()">×</button>
+            </div>
+
+            <div class="encouragement">
+                <div class="encouragement-text">
+                    💚 Takk for at du deler! Husk: Det finnes ingen dumme spørsmål eller for små seire her.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Velg kategori:</label>
+                <div class="category-select">
+                    <div class="category-option" onclick="selectCategory('unsikker')">
+                        <div class="category-option-icon">😟</div>
+                        <div class="category-option-text">Jeg er usikker...</div>
+                    </div>
+                    <div class="category-option" onclick="selectCategory('suksess')">
+                        <div class="category-option-icon">💪</div>
+                        <div class="category-option-text">Jeg klarte det!</div>
+                    </div>
+                    <div class="category-option" onclick="selectCategory('rad')">
+                        <div class="category-option-icon">🤝</div>
+                        <div class="category-option-text">Trenger råd</div>
+                    </div>
+                    <div class="category-option selected" onclick="selectCategory('styrke')">
+                        <div class="category-option-icon">🌟</div>
+                        <div class="category-option-text">Min styrke</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Ditt innlegg:</label>
+                <textarea class="post-input" id="newPostInput" placeholder="Del dine tanker..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <div class="anonymous-toggle">
+                    <input type="checkbox" id="postAnonymous" checked>
+                    <label for="postAnonymous">📝 Post anonymt</label>
+                </div>
+            </div>
+
+            <button class="post-btn" onclick="submitPost()">Publiser innlegg 💚</button>
+        </div>
+    </div>
+
+    <script>
+        let selectedPostCategory = 'styrke';
+        let posts = [];
+        let dailyResponses = [];
+
+        function postDailyResponse() {
+            const input = document.getElementById('dailyResponseInput');
+            const anonymous = document.getElementById('dailyAnonymous').checked;
+            
+            if (!input.value.trim()) {
+                alert('Vennligst skriv noe først 😊');
+                return;
+            }
+
+            const response = {
+                text: input.value,
+                anonymous: anonymous,
+                author: anonymous ? 'Anonym' : 'Deg',
+                time: 'Nå nettopp',
+                reactions: { support: 0, strength: 0, celebrate: 0, hug: 0 }
+            };
+
+            dailyResponses.unshift(response);
+            
+            input.value = '';
+            
+            alert('💚 Takk for at du delte! Ditt svar er lagt til.');
+        }
+
+        function openNewPost() {
+            document.getElementById('newPostModal').classList.add('active');
+        }
+
+        function closeNewPost() {
+            document.getElementById('newPostModal').classList.remove('active');
+        }
+
+        function selectCategory(category) {
+            selectedPostCategory = category;
+            const options = document.querySelectorAll('.category-option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            event.target.closest('.category-option').classList.add('selected');
+        }
+
+        function submitPost() {
+            const input = document.getElementById('newPostInput');
+            const anonymous = document.getElementById('postAnonymous').checked;
+            
+            if (!input.value.trim()) {
+                alert('Vennligst skriv noe først 😊');
+                return;
+            }
+
+            const post = {
+                category: selectedPostCategory,
+                text: input.value,
+                anonymous: anonymous,
+                author: anonymous ? 'Anonym' : 'Deg',
+                time: 'Nå nettopp',
+                reactions: { support: 0, celebrate: 0, comments: 0 }
+            };
+
+            posts.unshift(post);
+            
+            input.value = '';
+            closeNewPost();
+            
+            alert('🎉 Innlegget ditt er publisert! Takk for at du deler med oss.');
+        }
+
+        function filterCategory(category) {
+            const cards = document.querySelectorAll('.category-card');
+            cards.forEach(card => card.classList.remove('active'));
+            event.target.closest('.category-card').classList.add('active');
+            
+            // In a real app, this would filter the posts
+            const categoryNames = {
+                'unsikker': '😟 Jeg er usikker...',
+                'suksess': '💪 Jeg klarte det!',
+                'rad': '🤝 Trenger råd',
+                'styrke': '🌟 Min styrke'
+            };
+            
+            document.querySelector('.section-title').textContent = categoryNames[category];
+        }
+
+        // Close modal on outside click
+        document.getElementById('newPostModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeNewPost();
+            }
+        });
+    </script>
+</body>
+</html>
